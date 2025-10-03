@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-visible {
+  display: grid;
+  grid-template-columns: minmax(250px, 1fr) 5fr;
+}
+
+.books-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.books-container ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1em 0 1em 0;
+  gap: 1em;
+}
+
+.books-container li {
+  padding: 1em;
+  font-size: .95em;
+  height: 250px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  border: 1px solid black;
+}
+
+.books-container p {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.form-sidebar {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form-sidebar form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-sidebar label {
+  display: block;
+  margin: 0 0 .5em 0;
+}
+
+.form-sidebar fieldset {
+  border: none;
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+
+.form-sidebar input:not([type="checkbox"]) {
+  padding: .5em;
+  width: 100%;
+}
+
+.form-sidebar input:not([type="checkbox"]):focus {
+  outline: .5px solid rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  margin: 0 0 0.5em 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+}
+
+main,
+.form-sidebar {
+  padding: 1em;
+}
+
+button {
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.175);
+}
+
+button:disabled {
+  opacity: .5;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.175);
+  font-weight: normal;
+}
+
+.add-book-button {
+  height: 2em;
+  width: 2em;
+}
+
+.books-container li p:first-child {
+  margin-top: auto;
+}
+
+.options-container {
+  display: flex;
+  gap: 1em;
+  margin-top: auto;
+  margin-left: auto;
+}
+
+.submit-book-button {
+  align-self: center;
+  height: 2.5em;
+  width: 8em;
+}
+
+.remove-book-button,
+.read-status-button {
+  font-size: larger;
+  height: 1em;
+  width: 1em;
+}
+
+.read-status-button:not(.book-read)::before {
+  content: '[ ]';
+  background-color: white;
+}
+
+.read-status-button.book-read::before {
+  content: '[|]';
+  color: green;
+}
+
+.remove-book-button {
+  color: red;
+  background-color: white;
+}
+
+.remove-book-button:hover,
+.read-status-button:hover {
+  opacity: .5;
+  background-color: initial
+}
