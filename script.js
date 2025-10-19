@@ -4,16 +4,34 @@ const booksContainer = document.querySelector('.books-container');
 
 const library = [];
 
-function Book(title, author, pages, readStatus = false) {
-  this.id = crypto.randomUUID();
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.readStatus = readStatus;
-}
+// Constructor Function
+// function Book(title, author, pages, readStatus = false) {
+//   this.id = crypto.randomUUID();
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.readStatus = readStatus;
+// }
 
-Book.prototype.read = function() {
-  this.readStatus = !this.readStatus;
+// Book.prototype.read = function() {
+//   this.readStatus = !this.readStatus;
+// }
+
+// Class Declaration
+class Book {
+  
+  constructor(title, author, pages, readStatus = false) {
+    this.id = crypto.randomUUID();
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.readStatus = readStatus;
+  }
+
+  read() {
+    this.readStatus = !this.readStatus;
+  }
+
 }
 
 function placeAddBookButton() {
